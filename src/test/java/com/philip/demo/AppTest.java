@@ -43,16 +43,16 @@ public class AppTest
     {
         File file = new File("/Users/philip/eclipse-workspace/yaml4Java/src/test/java/com/philip/demo/config.yaml");
         Configer conf;
-		try {
-			conf = Yaml.loadType(file, Configer.class);
-			//失败了，此库不推荐使用
-			Gson gson = new GsonBuilder().setPrettyPrinting().create();
-	        String json = gson.toJson(conf);
-	        System.out.println(json);
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+        try {
+            conf = Yaml.loadType(file, Configer.class);
+            //失败了，此库不推荐使用
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            String json = gson.toJson(conf);
+            System.out.println(json);
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
     
     //Jackson yaml
@@ -60,11 +60,11 @@ public class AppTest
     {
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
         try {
-        	Configer conf = mapper.readValue(new File("/Users/philip/eclipse-workspace/yaml4Java/src/test/java/com/philip/demo/config.yaml"), Configer.class);
-        	//成功~
-	        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-	        String json = gson.toJson(conf);
-	        System.out.println(json);
+            Configer conf = mapper.readValue(new File("/Users/philip/eclipse-workspace/yaml4Java/src/test/java/com/philip/demo/config.yaml"), Configer.class);
+            //成功~
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            String json = gson.toJson(conf);
+            System.out.println(json);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

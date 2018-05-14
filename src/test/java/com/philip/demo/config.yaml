@@ -1,0 +1,5 @@
+---
+variables: 
+    name: $myfunc(15, foo bar, true, 0.1f)
+    name2: 20
+    name3: hello world
